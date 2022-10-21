@@ -23,6 +23,7 @@ class Router
       puts "3. Je veux supprimer un gossip"
       puts "4. Je veux quitter l'app"
       puts
+      print "🖍  > "
       params = gets.chomp.to_i #on attend le choix de l'utilisateur
 
       case params #en fonction du choix

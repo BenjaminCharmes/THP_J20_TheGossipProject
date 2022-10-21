@@ -16,8 +16,12 @@ class View
   end
 
   def index_gossips(gossips)
+    count = 1
+    puts "Voici la liste de tous les gossips:"
+    puts
     gossips.each do |gossip|
-      puts "#{gossip.content} - #{gossip.author}"
+      puts "#{count}: #{gossip.content} - #{gossip.author}"
+      count += 1
     end
     puts
   end
@@ -27,7 +31,7 @@ class View
     puts "ℹ️  - Quel gossip souhaite-tu supprimer ?"
     puts
     print "🖍  > "
-    puts gossip_to_delete = gets.chomp
+    puts gossip_to_delete = gets.chomp.to_i
     puts
     return gossip_to_delete
   end

@@ -1,1 +1,1 @@
-The Hacking Project Gossip - Ruby Version POO
+🚧 WIP / Delete gossip doesn't work 🚧

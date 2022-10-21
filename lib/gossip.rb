@@ -29,5 +29,8 @@ class Gossip
   end
 
   def delete(gossip_to_delete)
-
+    csv_file = CSV.open("db/gossip.csv", "w")
+      csv_file.delete(gossip_to_delete)
+  end
+    
 end
