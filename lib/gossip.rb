@@ -28,9 +28,14 @@ class Gossip
     return all_gossips
   end
 
-  def delete(gossip_to_delete)
-    csv_file = CSV.open("db/gossip.csv", "w")
-      csv_file.delete(gossip_to_delete)
+  def self.delete_gossip(gossip_to_delete)
+    lines = File.readlines("db/gossip.csv")
+    lines.delete_at(gossip_to_delete - 1)
+    new_lines = lines
+    File.open("db/gossip.csv", "w") {|file| file.truncate(0)}
+    new_lines.each do |line|
+      File.open("db/gossip.csv", "a") {|f| f.write line}
+    end
   end
     
 end

@@ -9,8 +9,9 @@ class Router
 
 # Rappelle-toi que l'on fait "Router.new.perform" dans app.rb => après initialize, on définit donc perform.
   def perform 
+    system 'clear'
     puts
-    puts "BIENVENUE DANS THE GOSSIP PROJECT"
+    puts "BIENVENUE DANS THE GOSSIP PROJECT !"
     puts
 
     while true
@@ -28,33 +29,42 @@ class Router
 
       case params #en fonction du choix
       when 1
+        system 'clear'
         puts
         puts "Tu as choisi de créer un gossip" 
         puts
         @controller.create_gossip
 
       when 2
+        system 'clear'
         puts
         puts "Tu as choisi d'afficher tous les gossips"
         puts
         @controller.index_gossips
 
       when 3
+        system 'clear'
         puts
         puts "Tu as choisi de supprimer un gossip"
         puts
         @controller.delete_gossip
 
       when 4
+        system 'clear'
         puts
         puts "À bientôt ! 👋"
         puts
+        sleep 3
+        system 'clear'
         break #Ce "break" permet de sortir de la boucle while. C'est même la seule façon d'en sortir.
 
       else
+        system 'clear'
         puts
         puts "Ce choix n'existe pas, merci de ressayer" #Si l'utilisateur saisit une entrée non prévue, il retourne au début du "while true".
         puts 
+        sleep 3
+        system 'clear'
         #C'est pour ça que la boucle est infinie: potentiellement, il peut se gourer jusqu'à la fin des temps :)
 
       end
